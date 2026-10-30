@@ -1,30 +1,93 @@
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestionnaire de tâches</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestionnaire de tâches</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <main class="container">
-    <h1>Gestionnaire de tâches</h1>
 
-    <form id="task-form">
-      <input type="text" id="task-input" placeholder="Nouvelle tâche..." required>
-      <button type="submit">Ajouter</button>
-    </form>
+    <main class="container">
 
-    <div class="filters">
-      <button class="filter active" data-filter="all">Toutes</button>
-      <button class="filter" data-filter="todo">À faire</button>
-      <button class="filter" data-filter="done">Terminées</button>
-    </div>
+        <header>
+            <div class="logo">✓</div>
 
-    <ul id="task-list"></ul>
-    <p id="counter"></p>
-  </main>
+            <h1>Gestionnaire de tâches</h1>
 
-  <script src="script.js"></script>
+            <p>Organisez votre travail facilement !</p>
+        </header>
+
+        <!-- Formulaire d'ajout -->
+        <form id="task-form">
+
+            <input
+                type="text"
+                id="task-input"
+                placeholder="Nouvelle tâche..."
+                required
+            >
+
+            <select id="task-priority">
+                <option value="Haute">Priorité haute</option>
+                <option value="Moyenne" selected>Priorité moyenne</option>
+                <option value="Basse">Priorité basse</option>
+            </select>
+
+            <input
+                type="number"
+                id="task-deadline"
+                placeholder="Délai en jours"
+                min="1"
+                step="1"
+                required
+            >
+
+            <button type="submit" id="add-button">
+                + Ajouter
+            </button>
+
+        </form>
+
+        <!-- Filtres -->
+        <div class="filters">
+
+            <button class="filter active" data-filter="all">
+                Toutes
+            </button>
+
+            <button class="filter" data-filter="todo">
+                À faire
+            </button>
+
+            <button class="filter" data-filter="progress">
+                En cours
+            </button>
+
+            <button class="filter" data-filter="done">
+                Terminées
+            </button>
+
+        </div>
+
+        <!-- Liste des tâches -->
+        <ul id="task-list"></ul>
+
+        <!-- Compteur -->
+        <p id="counter">0 tâche restante</p>
+
+        <footer>
+            <p>Gestionnaire de tâches - Projet Approche Agile</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
